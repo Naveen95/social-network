@@ -21,10 +21,16 @@
 
                                     <article class = "post" data-postid="{{ $post->id }}">
                                         <p>{{$post->userpost}}</p>
+                                    @if ($post->anon == '0')
                                     <div class='info'>
                                          Posted By <a href="{{route('userprofile',['username'=>$post->user->name])}}">{{$post->user->name}}</a> on {{ $post->user->created_at}}
-                                    
                                     </div>
+                                    
+                                    @elseif ($post->anon == '1')
+                                     <div class='info'>
+                                         Posted By <b>Anonymous</b> on {{ $post->user->created_at}}
+                                    </div>
+                                    @endif
                                      
                                      <div class = 'interaction'>
                                         <a href=#>Like </a> |

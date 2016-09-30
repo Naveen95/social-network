@@ -29,6 +29,7 @@ class PostController extends Controller
 			$userpost = array(
 			'userpost' => $post['userpost'] ,
 			'user_id' => $userid,
+			'anon' => $post['anon'],
 
 			);
 		
